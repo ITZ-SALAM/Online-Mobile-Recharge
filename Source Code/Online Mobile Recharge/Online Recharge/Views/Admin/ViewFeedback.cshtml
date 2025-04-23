@@ -1,0 +1,39 @@
+﻿@model List<MobileRecharge.Controllers.FeedbackViewModel>
+
+@{
+    ViewData["Title"] = "View Feedback";
+}
+
+<div class="container mt-5">
+    <h2>User Feedback</h2>
+    <p>Below is the list of feedback submitted by users:</p>
+
+    @if (Model == null || !Model.Any())
+    {
+        <p>No feedback available.</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Submitted On</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var feedback in Model)
+                {
+                    <tr>
+                        <td>@feedback.Name</td>
+                        <td>@feedback.UserEmail</td>
+                        <td>@feedback.Message</td>
+                        <td>@feedback.SubmittedOn.ToString("dd/MM/yyyy HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

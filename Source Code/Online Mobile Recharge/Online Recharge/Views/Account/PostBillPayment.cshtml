@@ -1,0 +1,35 @@
+﻿@model MobileRecharge.Models.PostBillPaymentViewModel
+
+@{
+    ViewData["Title"] = "Post Bill Payment";
+}
+
+<div class="container mt-5">
+    <h2>Postpaid Bill Payment</h2>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+    }
+
+    <form asp-action="PostBillPayment" method="post">
+        <div class="form-group">
+            <label asp-for="MobileNumber">Mobile Number</label>
+            <input asp-for="MobileNumber" class="form-control" maxlength="10" required />
+            <span asp-validation-for="MobileNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Amount">Amount</label>
+            <input asp-for="Amount" class="form-control" step="0.01" min="1" required />
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Pay Bill</button>
+        <a asp-action="MyAccount" class="btn btn-secondary mt-3">Cancel</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

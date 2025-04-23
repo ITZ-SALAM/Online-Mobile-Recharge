@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Customer Care";
+}
+
+<div class="container mt-5">
+    <h2>Customer Care</h2>
+    <p>We’re here to assist you! Reach out to us through the following channels:</p>
+
+    <h4>Contact Information</h4>
+    <ul class="list-group mb-4">
+        <li class="list-group-item">
+            <strong>Helpline Number:</strong> +91-123-456-7890 (Available 9 AM - 6 PM, Mon-Sat)
+        </li>
+        <li class="list-group-item">
+            <strong>Email:</strong> <a href="mailto:support@mobilerecharge.com">support@mobilerecharge.com</a>
+        </li>
+        <li class="list-group-item">
+            <strong>Live Chat:</strong> Available on our website (bottom-right corner)
+        </li>
+    </ul>
+
+    <h4>Frequently Asked Questions</h4>
+    <p>Check out some common queries below:</p>
+    <ul>
+        <li><strong>How do I recharge my mobile?</strong> Go to <a asp-controller="Recharge" asp-action="OnlineRecharge">Online Recharge</a> and follow the steps.</li>
+        <li><strong>Where can I view my transactions?</strong> Log in and visit <a asp-controller="Account" asp-action="MyAccount">My Account</a>.</li>
+        <li><strong>How do I report an issue?</strong> Use our <a asp-controller="Home" asp-action="Contact">Contact Us</a> form.</li>
+    </ul>
+
+    <p>For more assistance, feel free to reach out!</p>
+</div>@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Payment";
+}
+
+<div class="container mt-5">
+    <h2>Payment for @ViewBag.PlanType</h2>
+    <p>Mobile Number: @ViewBag.MobileNumber</p>
+    <p>Amount: Rs. @ViewBag.Amount</p>
+    <form method="post" asp-action="ProcessPayment">
+        <input type="hidden" name="mobileNumber" value="@ViewBag.MobileNumber" />
+        <input type="hidden" name="planType" value="@ViewBag.PlanType" />
+        <input type="hidden" name="amount" value="@ViewBag.Amount" />
+        <div class="mb-3">
+            <label for="cardNumber" class="form-label">Card Number</label>
+            <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="Enter 16-digit card number" required />
+        </div>
+        <div class="mb-3">
+            <label for="expiry" class="form-label">Expiry Date</label>
+            <input type="text" class="form-control" id="expiry" name="expiry" placeholder="MM/YY" required />
+        </div>
+        <div class="mb-3">
+            <label for="cvv" class="form-label">CVV</label>
+            <input type="text" class="form-control" id="cvv" name="cvv" placeholder="3 digits" required />
+        </div>
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <span class="text-danger">@ViewBag.ErrorMessage</span>
+        }
+        <button type="submit" class="btn btn-primary">Pay Now</button>
+    </form>
+</div>

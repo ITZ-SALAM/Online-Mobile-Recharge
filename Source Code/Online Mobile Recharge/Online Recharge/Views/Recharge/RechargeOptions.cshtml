@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Recharge Options";
+}
+
+<div class="container mt-5">
+    <h2>Recharge Options for @ViewBag.MobileNumber</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Top Up</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rs. 100</td>
+                        <td><a class="btn btn-success" asp-action="Payment" asp-controller="Recharge" asp-route-mobileNumber="@ViewBag.MobileNumber" asp-route-planType="Top Up" asp-route-amount="100">Select</a></td>
+                    </tr>
+                    <tr>
+                        <td>Rs. 200</td>
+                        <td><a class="btn btn-success" asp-action="Payment" asp-controller="Recharge" asp-route-mobileNumber="@ViewBag.MobileNumber" asp-route-planType="Top Up" asp-route-amount="200">Select</a></td>
+                    </tr>
+                    <tr>
+                        <td>Rs. 500</td>
+                        <td><a class="btn btn-success" asp-action="Payment" asp-controller="Recharge" asp-route-mobileNumber="@ViewBag.MobileNumber" asp-route-planType="Top Up" asp-route-amount="500">Select</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h3>Special Recharge</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rs. 150 - 1GB Data</td>
+                        <td><a class="btn btn-success" asp-action="Payment" asp-controller="Recharge" asp-route-mobileNumber="@ViewBag.MobileNumber" asp-route-planType="Special Recharge" asp-route-amount="150">Select</a></td>
+                    </tr>
+                    <tr>
+                        <td>Rs. 300 - 2GB Data + Calls</td>
+                        <td><a class="btn btn-success" asp-action="Payment" asp-controller="Recharge" asp-route-mobileNumber="@ViewBag.MobileNumber" asp-route-planType="Special Recharge" asp-route-amount="300">Select</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

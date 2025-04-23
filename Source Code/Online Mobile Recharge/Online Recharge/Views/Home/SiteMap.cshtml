@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Site Map";
+}
+
+<div class="container mt-5">
+    <h2>Site Map</h2>
+    <p>Explore all sections of our Mobile Recharge application below:</p>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a asp-controller="Home" asp-action="Index">Home</a> - Main landing page
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Recharge" asp-action="OnlineRecharge">Online Recharge</a> - Recharge your mobile
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Account" asp-action="PostBillPayment">Post Bill Payment</a> - Pay your postpaid bills
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Home" asp-action="Feedback">Feedback</a> - Share your feedback with us
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Home" asp-action="SiteMap">Site Map</a> - Overview of all pages (you are here)
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Home" asp-action="About">About Us</a> - Learn more about us
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Home" asp-action="Contact">Contact Us</a> - Get in touch with us
+        </li>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li class="list-group-item">
+                <a asp-controller="Account" asp-action="MyAccount">My Account</a> - View your transactions
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Account" asp-action="Profile">Profile</a> - Manage your profile
+            </li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="list-group-item">
+                    <a asp-controller="Admin" asp-action="Index">Admin Dashboard</a> - Manage transactions
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="Admin" asp-action="ManageUsers">Manage Users</a> - Admin user management
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="Admin" asp-action="ViewFeedback">View Feedback</a> - See user feedback
+                </li>
+            }
+        }
+    </ul>
+</div>

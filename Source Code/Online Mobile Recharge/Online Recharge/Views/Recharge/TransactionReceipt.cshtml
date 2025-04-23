@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Transaction Receipt";
+}
+
+<div class="container mt-5">
+    <h2>Transaction Successful</h2>
+    <p>Mobile Number: @ViewBag.MobileNumber</p>
+    <p>Plan Type: @ViewBag.PlanType</p>
+    <p>Amount: Rs. @ViewBag.Amount</p>
+    <p>Transaction ID: @ViewBag.TransactionId</p>
+    <button class="btn btn-primary" onclick="window.print()">Print Receipt</button>
+    <a class="btn btn-secondary" asp-action="OnlineRecharge" asp-controller="Recharge">Cancel</a>
+</div>
