@@ -21,7 +21,7 @@ Make sure the following software is installed:
 If you're using Git:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/ITZ-SALAM/Online-Mobile-Recharge.git
 ```
 
 Or copy the full project folder manually to the new device.
